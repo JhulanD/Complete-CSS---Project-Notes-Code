@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Cabin:ital,wght@0,400..700;1,400..700&family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&family=Mozilla+Headline:wght@200..700&family=Mozilla+Text:wght@200..700&family=Outfit:wght@100..900&family=Oxygen:wght@300;400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Sora:wght@100..800&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+:root {
+    --primary-color: #05445E;
+    --secondary-color: #189AB4;
+    --background-color: #D4F1F4;
+    --text-color: #212529;
+    --font-one: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-two: Outfit, sans-serif;
+    --font-three: 'Barlow', sans-serif;
+    --font-four: 'DM Sans', sans-serif;
+    --font-five: 'Geist Mono', monospace;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+  html, body {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  background-color: aliceblue;
+}
+
+header {
+  text-align: center;
+  margin: 1rem auto;
+  max-width: 800px;
+  padding: 1rem;
+}
+
+h1 {
+    font-family: 'Barlow', sans-serif;
+    line-height: 1.2;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    margin: 1rem auto;
+  font-size: 4rem;
+  font-weight: 500;
+  text-align: center;
+  color:darkcyan;
+}
+
+h2 {
+    font-family: var(--font-two);
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+h3 {
+    
+    font-family: var(--font-three);
+    line-height: 1.2;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    margin: 1rem auto;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+code {
+    background-color: var(--background-color);
+    font-family: var(--font-five);
+    /* font-style: italic; */
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 1.25;
+}
+
+.description {
+  margin: 1rem auto;
+  max-width: 800px;
+  padding: 0 2rem;
+  font-family: var(--font-five);
+  font-size: 0.9rem;
+  line-height: 1.25;
+}
+
+ul {
+  margin: 1rem auto;
+  max-width: 700px;
+  padding: 0 2rem;
+  font-family: var(--font-five);
+  font-size: 0.9rem;
+  line-height: 1.25;
+}
+
+p {
+    font-family: var(--font-four);
+    font-size: 1rem;
+    line-height: 1.25rem;
+}

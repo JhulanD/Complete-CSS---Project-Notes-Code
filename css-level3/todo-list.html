@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Styled To-Do List</title>
+  <style>
+      .todo-list a {
+        text-decoration: none;
+      }
+    /* Styling anchor links inside sub-item list */
+    .sub-item a {
+      text-decoration: none;  /* 14. no underline by default */
+      color: #435B75;
+    }
+
+    .sub-item a:hover {
+      color: #3A75B5;         /* 15. change color on hover */
+    }
+
+    .sub-item a:active {
+      color: #4B4433;         /* 16. change color when clicked */
+    }
+
+    .sub-item a:focus {
+      outline: 2px solid #4B4437;  /* 17. outline when focused */
+      color: #4B4437;
+    }
+
+    .sub-item a:visited {
+      color: #F5A111;         /* 18. change color once visited */
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="todo-list">
+    <li>
+      <input id="name1" type="checkbox">
+      <label for="name1">Maradona</label>
+      <ul class="sub-item">
+        <li><a class="sub-item-link" href="https://www.fifa.com/maradona" target="_blank">Play Maradona</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <input id="name2" type="checkbox">
+      <label for="name2">Ronaldo</label>
+      <ul class="sub-item">
+        <li><a class="sub-item-link" href="https://www.fifa.com/ronaldo" target="_blank">Play Ronaldo</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <input id="name3" type="checkbox">
+      <label for="name3">Messi</label>
+      <ul class="sub-item">
+        <li><a class="sub-item-link" href="https://www.fifa.com/messi" target="_blank">Play Messi</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <input id="name4" type="checkbox">
+      <label for="name4">Becker</label>
+      <ul class="sub-item">
+        <li><a class="sub-item-link" href="https://www.fifa.com/becker" target="_blank">Play Becker</a></li>
+      </ul>
+    </li>
+  </ul>
+</body>
+
+</html>

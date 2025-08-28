@@ -1,11 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS-Level2 - Units in CSS</title>
+    <title>CSS-Level3 - Units and Position</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fira+Code:wght@300..700&family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mozilla+Headline:wght@200..700&family=Mozilla+Text:wght@200..700&family=Onest:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&family=Vend+Sans:ital,wght@0,300..700;1,300..700&display=swap');
+
+body {
+    font-family: 'Vend sans', sans-serif;
+    padding: 1rem;
+}
+body {
+  background-color: beige;
+}
+
+@media screen and (max-width: 992px) {
+  body {
+    background-color: lightcyan;
+  }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background-color: rgba(255, 160, 122, 0.25);
+        font-family: 'Mozilla Text', monospace;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .button {
+        width: 100px;
+    }
+    p {
+        font-size: 0.8rem;
+    }
+}
+</style>
 </head>
+
 <body>
-    
+    <h1>CSS-Level3 - Units and Position</h1>
+    <section id="css-units">
+        <h2>CSS Units</h2>
+        <p>CSS units define how sizes and lengths are measured when styling HTML elements. They fall into two main
+            categories:</p>
+
+        <h3>1. Absolute Units</h3>
+        <p>Absolute units have fixed sizes and do not scale based on the viewport or parent element. They are useful for
+            precise control, especially in print or fixed layouts.</p>
+        <ul>
+            <li><code>px</code> - Pixels (most common for screens)</li>
+            <li><code>cm</code> - Centimeters</li>
+            <li><code>mm</code> - Millimeters</li>
+            <li><code>in</code> - Inches</li>
+            <li><code>pt</code> - Points (1pt = 1/72 inch)</li>
+            <li><code>pc</code> - Picas (1pc = 12 points)</li>
+        </ul>
+
+        <h3>2. Relative Units</h3>
+        <p>Relative units scale based on other factors, such as the font size of the parent or root element, or the size
+            of the viewport. They are essential for responsive design.</p>
+        <ul>
+            <li><code>em</code> - Relative to the font size of the parent element</li>
+            <li><code>rem</code> - Relative to the font size of the root (<code>&lt;html&gt;</code>) element</li>
+            <li><code>%</code> - Percentage relative to the size of the parent element</li>
+            <li><code>vw</code> - 1% of viewport width</li>
+            <li><code>vh</code> - 1% of viewport height</li>
+            <li><code>vmin</code> - 1% of the smaller viewport dimension</li>
+            <li><code>vmax</code> - 1% of the larger viewport dimension</li>
+        </ul>
+
+        <p><strong>Example:</strong></p>
+        <pre><code>body {
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 3rem; /* 3 times root font size */
+}
+
+.container {
+  width: 80vw; /* 80% of viewport width */
+  margin: 0 auto;
+}
+
+.button {
+  width: 150px; /* fixed width */
+  padding: 1em;
+}
+</code></pre>
+    </section>
+
+        <section id="css-position">
+        <h2>CSS Position</h2>
+        <p>The <code>position</code> property specifies how an element is positioned in the document flow, and what reference point it uses for positioning.</p>
+
+        <h3>Position values and their behavior:</h3>
+        <ul>
+            <li><code>static</code> (default): Follows normal document layout flow.</li>
+            <li><code>relative</code>: Positioned relative to its normal position.</li>
+            <li><code>absolute</code>: Positioned relative to the closest positioned ancestor (non-static) or to the viewport if none is found. Removed from normal flow.</li>
+            <li><code>fixed</code>: Positioned relative to the viewport and does not move when scrolling. Removed from normal flow.</li>
+            <li><code>sticky</code>: Acts like <code>relative</code> until reaching a threshold, then behaves like <code>fixed</code>.</li>
+        </ul>
+
+        <h3>Position offsets</h3>
+        <p>When an element is positioned (relative, absolute, fixed, sticky), you can use:</p>
+        <ul>
+            <li><code>top</code></li>
+            <li><code>right</code></li>
+            <li><code>bottom</code></li>
+            <li><code>left</code></li>
+        </ul>
+        <p>These define the offset from the respective edge of its containing block or viewport.</p>
+
+        <p><strong>Example:</strong></p>
+        <pre><code>/* Relative positioning */
+.relative-box {
+  position: relative;
+  top: 10px;
+  left: 20px;
+}
+
+/* Absolute positioning */
+.absolute-box {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+
+/* Fixed positioning */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+}
+
+/* Sticky positioning */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+}
+</code></pre>
+    </section>
+    <section id="css-background-size">
+    <h2>CSS background-size</h2>
+    <p>The <code>background-size</code> CSS property specifies the size of the background image. It controls how the image scales inside the container.</p>
+
+    <h3>Values</h3>
+    <ul>
+        <li><code>auto</code> - The background image is displayed at its original size (default).</li>
+        <li><code>length</code> - Set explicit width and height (e.g., <code>200px 100px</code>). If only one length is given, the other defaults to <code>auto</code>.</li>
+        <li><code>percentage</code> - Width and height as a percentage of the container size (e.g., <code>50% 30%</code>).</li>
+        <li><code>cover</code> - Scales the image to cover the entire container while preserving aspect ratio. Some cropping may occur.</li>
+        <li><code>contain</code> - Scales the image to be fully visible within the container preserving aspect ratio. Might leave empty space.</li>
+    </ul>
+
+    <h3>Examples</h3>
+
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <div style="width: 150px; height: 150px; border: 1px solid #ccc; background-image: url('https://via.placeholder.com/300x150'); background-repeat: no-repeat; background-size: auto;">
+            <p style="text-align:center; margin-top: 120px; font-size: 14px;">auto</p>
+        </div>
+        <div style="width: 150px; height: 150px; border: 1px solid #ccc; background-image: url('https://via.placeholder.com/300x150'); background-repeat: no-repeat; background-size: 100px 50px;">
+            <p style="text-align:center; margin-top: 120px; font-size: 14px;">100px 50px</p>
+        </div>
+        <div style="width: 150px; height: 150px; border: 1px solid #ccc; background-image: url('https://via.placeholder.com/300x150'); background-repeat: no-repeat; background-size: cover;">
+            <p style="text-align:center; margin-top: 120px; font-size: 14px; color: white; text-shadow: 1px 1px 3px black;">cover</p>
+        </div>
+        <div style="width: 150px; height: 150px; border: 1px solid #ccc; background-image: url('https://via.placeholder.com/300x150'); background-repeat: no-repeat; background-size: contain;">
+            <p style="text-align:center; margin-top: 120px; font-size: 14px;">contain</p>
+        </div>
+    </div>
+
+    <pre><code>/* Original image size */
+.element1 {
+    background-image: url('image.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+/* Fixed size */
+.element2 {
+    background-image: url('image.jpg');
+    background-repeat: no-repeat;
+    background-size: 100px 50px;
+}
+
+/* Cover entire container */
+.element3 {
+    background-image: url('image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Image fully visible inside container */
+.element4 {
+    background-image: url('image.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+</code></pre>
+</section>
+<section id="css-media-queries">
+    <h2>CSS Media Queries</h2>
+    <p>CSS Media Queries allow you to apply different styles to a webpage depending on device characteristics, such as screen size, orientation, and resolution. This is essential for responsive web design.</p>
+
+    <h3>Syntax</h3>
+    <pre><code>@media media-type and (media-feature) {
+  /* CSS rules */
+}</code></pre>
+
+    <p>Common media types include <code>all</code>, <code>screen</code>, and <code>print</code>. Media features are conditions like <code>min-width</code>, <code>max-width</code>, orientation, and more.</p>
+
+    <h3>Examples</h3>
+    <p>Change background color based on viewport width:</p>
+    <pre><code>body {
+  background-color: tan;
+}
+
+@media screen and (max-width: 992px) {
+  body {
+    background-color: blue;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background-color: olive;
+  }
+}</code></pre>
+
+    <p>Navigation menu layout changes on smaller screens:</p>
+    <pre><code>/* Large screens */
+.navbar ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.navbar li {
+  margin-right: 20px;
+}
+
+/* Small screens */
+@media screen and (max-width: 600px) {
+  .navbar ul {
+    display: block;
+    margin: 0;
+  }
+  
+  .navbar li {
+    margin: 10px 0;
+  }
+}</code></pre>
+
+    <p><strong>Notes:</strong> Media queries use breakpoints (e.g., 600px, 992px) to define when styles should change, enabling responsive layouts.</p>
+</section>
+
 </body>
+
 </html>
